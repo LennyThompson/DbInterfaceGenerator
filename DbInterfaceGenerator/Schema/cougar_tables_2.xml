@@ -1888,7 +1888,9 @@
     <Column Name="associate" Id="8" Type="char" IsPrimaryKey="0" />
   </Table>
   <Table Schema="dbo" Name="egm" Id="923150334">
-    <Column Name="egm_serial_number" Id="1" Type="int" IsPrimaryKey="1" />
+    <Column Name="egm_serial_number" Id="1" Type="int" IsPrimaryKey="1" >
+      <SelectList/>
+    </Column>
     <Column Name="template_id" Id="2" Type="smallint" IsPrimaryKey="0" />
     <Column Name="current_site_id" Id="3" Type="smallint" IsPrimaryKey="0" />
     <Column Name="plate_number" Id="4" Type="int" IsPrimaryKey="0" />
@@ -1918,21 +1920,21 @@
     <Column Name="jt_id" Id="28" Type="char" IsPrimaryKey="0" />
     <Column Name="note_acceptor_present" Id="29" Type="char" IsPrimaryKey="0" />
     <Column Name="note_acceptor_enabled" Id="30" Type="char" IsPrimaryKey="0" />
-    <Column Name="bill_5_enabled" Id="31" Type="char" IsPrimaryKey="0" />
-    <Column Name="bill_10_enabled" Id="32" Type="char" IsPrimaryKey="0" />
-    <Column Name="bill_20_enabled" Id="33" Type="char" IsPrimaryKey="0" />
-    <Column Name="bill_50_enabled" Id="34" Type="char" IsPrimaryKey="0" />
-    <Column Name="bill_100_enabled" Id="35" Type="char" IsPrimaryKey="0" />
+    <Column Name="bill_5_enabled" Id="31" Type="char" IsPrimaryKey="0" AsBoolean="Y"/>
+    <Column Name="bill_10_enabled" Id="32" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="bill_20_enabled" Id="33" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="bill_50_enabled" Id="34" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="bill_100_enabled" Id="35" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
     <Column Name="max_meter_value" Id="36" Type="int" IsPrimaryKey="0" />
     <Column Name="rental_amount" Id="37" Type="int" IsPrimaryKey="0" />
     <Column Name="max_allowable_increment" Id="38" Type="int" IsPrimaryKey="0" />
     <Column Name="base_game_version_number" Id="39" Type="int" IsPrimaryKey="0" />
     <Column Name="program_signature_timeout" Id="40" Type="smallint" IsPrimaryKey="0" />
-    <Column Name="touch_screen_present" Id="41" Type="char" IsPrimaryKey="0" />
-    <Column Name="coin_acceptor_present" Id="42" Type="char" IsPrimaryKey="0" />
-    <Column Name="hopper_present" Id="43" Type="char" IsPrimaryKey="0" />
-    <Column Name="ticket_printer_present" Id="44" Type="char" IsPrimaryKey="0" />
-    <Column Name="player_tracking_installed" Id="45" Type="char" IsPrimaryKey="0" />
+    <Column Name="touch_screen_present" Id="41" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="coin_acceptor_present" Id="42" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="hopper_present" Id="43" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="ticket_printer_present" Id="44" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="player_tracking_installed" Id="45" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
     <Column Name="software_set_app_number" Id="46" Type="char" IsPrimaryKey="0" />
     <Column Name="spare_1" Id="47" Type="char" IsPrimaryKey="0" />
     <Column Name="spare_2" Id="48" Type="char" IsPrimaryKey="0" />
@@ -1942,12 +1944,12 @@
     <Column Name="egm_meters_limit_type" Id="52" Type="varchar" IsPrimaryKey="0" />
     <Column Name="np_win_payout_threshold" Id="53" Type="int" IsPrimaryKey="0" />
     <Column Name="sap_win_payout_threshold" Id="54" Type="int" IsPrimaryKey="0" />
-    <Column Name="ticket_in_device_present" Id="55" Type="char" IsPrimaryKey="0" />
-    <Column Name="aux_display_device_present" Id="56" Type="char" IsPrimaryKey="0" />
-    <Column Name="mechanical_meters_present" Id="57" Type="char" IsPrimaryKey="0" />
-    <Column Name="denom_hot_switching_enabled" Id="58" Type="char" IsPrimaryKey="0" />
-    <Column Name="var_hot_switching_enabled" Id="59" Type="char" IsPrimaryKey="0" />
-    <Column Name="shared_prog_jackpots_enabled" Id="60" Type="char" IsPrimaryKey="0" />
+    <Column Name="ticket_in_device_present" Id="55" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="aux_display_device_present" Id="56" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="mechanical_meters_present" Id="57" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="denom_hot_switching_enabled" Id="58" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="var_hot_switching_enabled" Id="59" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
+    <Column Name="shared_prog_jackpots_enabled" Id="60" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
     <Column Name="max_rtp" Id="61" Type="int" IsPrimaryKey="0" />
     <Column Name="min_rtp" Id="62" Type="int" IsPrimaryKey="0" />
     <Column Name="max_standard_deviation" Id="63" Type="int" IsPrimaryKey="0" />
@@ -1959,7 +1961,7 @@
     <Column Name="max_denomination" Id="69" Type="int" IsPrimaryKey="0" />
     <Column Name="player_info_display" Id="70" Type="int" IsPrimaryKey="0" />
     <Column Name="hopper_weight" Id="71" Type="int" IsPrimaryKey="0" />
-    <Column Name="downloadable_games_enabled" Id="72" Type="char" IsPrimaryKey="0" />
+    <Column Name="downloadable_games_enabled" Id="72" Type="char" IsPrimaryKey="0" AsBoolean="Y" />
     <Column Name="tito_implementation_type" Id="73" Type="smallint" IsPrimaryKey="0" />
   </Table>
   <Table Schema="dbo" Name="keno_play_summary" Id="926626344">
@@ -2837,7 +2839,9 @@
     <Column Name="membership_type_id" Id="3" Type="int" IsPrimaryKey="1" />
   </Table>
   <Table Schema="dbo" Name="qogr_egm_signatures" Id="1678629023">
-    <Column Name="software_set_approval_number" Id="1" Type="varchar" IsPrimaryKey="1" />
+    <Column Name="software_set_approval_number" Id="1" Type="varchar" IsPrimaryKey="1">
+      <SelectList signature_date="single"/>
+    </Column>
     <Column Name="software_component_id" Id="2" Type="varchar" IsPrimaryKey="0" />
     <Column Name="manufacturer_id" Id="3" Type="smallint" IsPrimaryKey="0" />
     <Column Name="software_set_name" Id="4" Type="varchar" IsPrimaryKey="0" />

@@ -10,7 +10,7 @@ namespace DbInterfaceGenerator
     {
         static void Main(string[] args)
         {
-            LoadXmlSqlSchema loadSchema = new LoadXmlSqlSchema("C:\\Dev\\Temp\\cougar_tables_2.xml");
+            LoadXmlSqlSchema loadSchema = new LoadXmlSqlSchema("C:\\Dev\\Utils\\DbInterfaceGenerator\\DbInterfaceGenerator\\Schema\\cougar_tables_2.xml");
 
             Console.WriteLine("Schema found = " + loadSchema.schema.Count);
 

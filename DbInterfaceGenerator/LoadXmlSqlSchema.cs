@@ -35,7 +35,6 @@ namespace DbInterfaceGenerator
                                     break;
                                 case "Table":
                                     tableCurr = new Table();
-                                    tableCurr.fields = new List<Field>();
                                     tableCurr.addAttribute("Name", xmlReader.GetAttribute("Name"));
                                     tableCurr.addAttribute("Id", xmlReader.GetAttribute("Id"));
                                     string strSchemaName = xmlReader.GetAttribute("Schema");
@@ -65,9 +64,21 @@ namespace DbInterfaceGenerator
                                     fieldCurr.addAttribute("Id", xmlReader.GetAttribute("Id"));
                                     fieldCurr.addAttribute("Type", xmlReader.GetAttribute("Type"));
                                     fieldCurr.addAttribute("IsPrimaryKey", xmlReader.GetAttribute("IsPrimaryKey"));
+                                    fieldCurr.addAttribute("IsSelectList", xmlReader.GetAttribute("IsSelectList"));
                                     fieldCurr.addAttribute("ColumnReferencesTableId", xmlReader.GetAttribute("ColumnReferencesTableId"));
                                     fieldCurr.addAttribute("ColumnReferencesTableColumnId", xmlReader.GetAttribute("ColumnReferencesTableColumnId"));
-                                    tableCurr.fields.Add(fieldCurr);
+                                    tableCurr.addField(fieldCurr);
+                                    break;
+                                case "SelectList":
+                                    fieldCurr = new SelectListField(fieldCurr);
+                                    if (xmlReader.MoveToFirstAttribute())
+                                    {
+                                        do
+                                        {
+                                            fieldCurr.addAttribute(xmlReader.Name, xmlReader.Value);
+                                        } while (xmlReader.MoveToNextAttribute());
+                                    }
+                                    tableCurr.addField(fieldCurr);
                                     break;
                                 default:
                                     break;
